@@ -1,2 +1,2 @@
 # pokedoro
-A pomodoro timer when you can grouth your pokemoin!
+A pomodoro timer when you can grouth your pokemon!

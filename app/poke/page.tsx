@@ -1,5 +1,7 @@
+'use client';
 import Image from "next/image";
 import Schyter from "@/assets/pokemons/schyter.png";
+import Bg from "@/assets/background/kanto.jpg";
 import { Timer } from "@/lib/components/Timer";
 import { useState } from "react";
 
@@ -12,19 +14,19 @@ export default function PokeHome() {
   
 
   return (
-    <section className="w-full min-h-svh" style={{ backgroundImage: 'url(/poke-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <main className="flex flex-col p-6 max-w-screen-md mx-auto bg-amber-100 bg-opacity-30 min-h-svh">
+    <section className="w-full min-h-svh" style={{ backgroundImage: `url(${Bg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <main className="flex flex-col p-6 max-w-screen-md mx-auto bg-stone-800 bg-opacity-50 min-h-svh">
         <nav className="w-full flex">
           <h1 className="text-3xl font-bold mb-4">Pokemodoro</h1>
         </nav>
         <section id="timer-pokemon" className="flex flex-col w-full items-center">
           <Timer />
           <div id="pokemon" className="flex flex-col items-center">
-            <Image src={Schyter} alt="Schyter" width={200} height={200} />
+            <Image src={Schyter} alt="Schyter" width={300} height={300} />
             <div>
-              <span>lvl: 5</span>
-              <span>timers: 3</span>
-              <span>Task completed: 1</span>
+              <span>lvl: {pokemonStats.level}</span>
+              <span>timers: {pokemonStats.timers}</span>
+              <span>Task completed: {pokemonStats.tasksCompleted}</span>
           </div>
           </div>
         </section>
